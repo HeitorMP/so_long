@@ -12,8 +12,16 @@
 
 #include "../../includes/so_long_bonus.h"
 
+void	set_quant(t_root *root)
+{
+	root->quant.quant_collect = 0;
+	root->quant.quant_patrol = MONSTERS;
+	root->patrol = malloc(sizeof(t_sprite) * root->quant.quant_patrol);
+}
+
 void	set_flags(t_root *root)
 {
+	set_quant(root);
 	root->flags.has_init_error = 0;
 	root->flags.has_ingame_error = 0;
 	root->flags.is_files_not_present = 0;
@@ -25,9 +33,7 @@ void	set_flags(t_root *root)
 	root->flags.is_not_square = 0;
 	root->flags.is_door_open = 0;
 	root->flags.is_game_over = 0;
-	root->flags.is_game_over_fail = 0;
 	root->flags.is_not_ber = 0;
 	root->flags.is_not_way_out = 0;
 	root->hero.direction = RIGHT;
-	root->patrol.direction = RIGHT;
 }
