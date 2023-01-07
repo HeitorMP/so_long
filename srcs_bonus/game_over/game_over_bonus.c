@@ -17,6 +17,8 @@ int	game_over_sucess(t_root *root)
 	mlx_clear_window(root->mlx.mlx, root->mlx.win);
 	mlx_string_put(root->mlx.mlx, root->mlx.win, 32, 32, 16711680, \
 		"Congratulations!");
+	mlx_string_put(root->mlx.mlx, root->mlx.win, 32, root->playfield.lin * 32, \
+	16711680, "Image credits: https://pipoya.itch.io/");
 	return (0);
 }
 
@@ -25,6 +27,8 @@ int	game_over_fail(t_root *root)
 	mlx_clear_window(root->mlx.mlx, root->mlx.win);
 	mlx_string_put(root->mlx.mlx, root->mlx.win, 32, 32, 16711680, \
 		"You Die!");
+	mlx_string_put(root->mlx.mlx, root->mlx.win, 32, root->playfield.lin * 32, \
+	16711680, "Image credits: https://pipoya.itch.io/");
 	return (0);
 }
 
